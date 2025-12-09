@@ -135,7 +135,8 @@ interface TradeAPI {
                                       @Query("algoClOrdId") String algoClOrdId,
                                       @Query("after") String after,
                                       @Query("before") String before,
-                                      @Query("limit") String limit);
+                                      @Query("limit") String limit,
+                                      @Query("advanceOrdType") String advanceOrdType);
 
     //获取历史策略委托单列表 Get Algo Order History
     @GET("/api/v5/trade/orders-algo-history")
@@ -147,7 +148,8 @@ interface TradeAPI {
                                          @Query("clOrdId") String clOrdId,
                                          @Query("after") String after,
                                          @Query("before") String before,
-                                         @Query("limit") String limit);
+                                         @Query("limit") String limit,
+                                         @Query("advanceOrdType") String advanceOrdType);
 
     //获取一键兑换主流币币种列表  Get easy convert currency list
     @GET("/api/v5/trade/easy-convert-currency-list")
@@ -178,7 +180,7 @@ interface TradeAPI {
                                                      @Query("limit") String limit   );
 
     @GET("/api/v5/trade/order-algo")
-    Call<JSONObject>  getAlgoOrderDetails(@Query("algoId")String algoId, @Query("algoClOrdId")String algoClOrdId);
+    Call<JSONObject>  getAlgoOrderDetails(@Query("algoId")String algoId, @Query("algoClOrdId")String algoClOrdId, @Query("advanceOrdType") String advanceOrdType);
 
     @POST("/api/v5/trade/amend-algos")
     Call<JSONObject> amendAlgos(@Body AmendAlgos amendAlgos);

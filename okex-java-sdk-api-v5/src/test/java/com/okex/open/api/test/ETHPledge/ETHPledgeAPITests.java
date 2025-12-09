@@ -88,4 +88,15 @@ public class ETHPledgeAPITests extends  ETHPledgeAPIBaseTests {
         JSONObject result = this.ETHPledgeAPI.getProductInfo();
         toResultString(LOG, "result", result);
     }
+    /**
+     * POST / 撤销赎回 cancel-redeem
+     * POST /api/v5/finance/staking-defi/eth/cancel-redeem
+     */
+    @Test
+    public void cancelRedeem(){
+        Redeem redeem = new Redeem();
+        redeem.setOrdId("");
+        JSONObject result = this.ETHPledgeAPI.cancelRedeem(redeem);
+        toResultString(LOG, "result", result);
+    }
 }

@@ -248,6 +248,8 @@ public class TradeAPITest extends TradeAPIBaseTest {
         attachAlgoOrds.setSz("");
         attachAlgoOrds.setNewTpOrdKind("");
         attachAlgoOrds.setAmendPxOnTriggerType("");
+        attachAlgoOrds.setNewTpTriggerRatio("");
+        attachAlgoOrds.setNewSlTriggerRatio("");
         list.add(attachAlgoOrds);
         amendOrder.setAttachAlgoOrds(list);
         JSONObject result = tradeAPIService.amendOrder(amendOrder);
@@ -429,7 +431,7 @@ public class TradeAPITest extends TradeAPIBaseTest {
     }
 
     /**
-     * 委托策略下单 Place Algo  Order
+     * 策略委托下单 Place Algo  Order
      * POST /api/v5/trade/order-algo
      */
     @Test
@@ -510,6 +512,7 @@ public class TradeAPITest extends TradeAPIBaseTest {
 
         cancelAlgoOrder.setAlgoId("300338778946826240");
         cancelAlgoOrder.setInstId("BTC-USDT");
+        cancelAlgoOrder.setAlgoClOrdId("");
         list.add(cancelAlgoOrder);
 
         JSONObject result = tradeAPIService.cancelAlgoOrder(list);
@@ -540,7 +543,7 @@ public class TradeAPITest extends TradeAPIBaseTest {
      */
     @Test
     public void getAlgoOrderList(){
-        JSONObject result = tradeAPIService.getAlgoOrderList("300592229014450176",null,null,"trigger","",null,null,"10");
+        JSONObject result = tradeAPIService.getAlgoOrderList("300592229014450176",null,null,"trigger","",null,null,"10","");
         toResultString(LOG, "result", result);
     }
 
@@ -551,7 +554,7 @@ public class TradeAPITest extends TradeAPIBaseTest {
      */
     @Test
     public void getAlgoOrderHistory(){
-        JSONObject result = tradeAPIService.getAlgoOrderHistory("effective",null,null,null,"trigger","",null,null,"10");
+        JSONObject result = tradeAPIService.getAlgoOrderHistory("effective",null,null,null,"trigger","",null,null,"10","");
         toResultString(LOG, "result", result);
     }
 
@@ -634,7 +637,7 @@ public class TradeAPITest extends TradeAPIBaseTest {
      */
     @Test
     public void getAlgoOrderDetails(){
-        JSONObject result = tradeAPIService.getAlgoOrderDetails("","");
+        JSONObject result = tradeAPIService.getAlgoOrderDetails("","","");
         toResultString(LOG, "result", result);
     }
 

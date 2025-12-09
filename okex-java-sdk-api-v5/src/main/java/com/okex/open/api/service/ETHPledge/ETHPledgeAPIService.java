@@ -19,4 +19,6 @@ public interface ETHPledgeAPIService {
     JSONObject getApyHistory(String days);
 
     JSONObject getProductInfo();
+
+    JSONObject cancelRedeem(Redeem redeem);
 }

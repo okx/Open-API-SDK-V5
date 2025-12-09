@@ -5,6 +5,15 @@ public class CancelAlgoOrder {
     private String algoId;
     private String instId;
 
+    public String getAlgoClOrdId() {
+        return algoClOrdId;
+    }
+
+    public void setAlgoClOrdId(String algoClOrdId) {
+        this.algoClOrdId = algoClOrdId;
+    }
+
+    private String algoClOrdId;
     public String getAlgoId() {
         return algoId;
     }

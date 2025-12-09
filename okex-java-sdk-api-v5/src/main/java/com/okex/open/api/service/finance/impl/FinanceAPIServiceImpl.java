@@ -164,4 +164,10 @@ public class FinanceAPIServiceImpl implements FinanceAPIService {
     public JSONObject getProductInfo(String fastRedemptionDailyLimit, String fastRedemptionAvail) {
         return this.client.executeSync(this.api.getProductInfo(fastRedemptionDailyLimit,fastRedemptionAvail));
     }
+
+    @Override
+    public JSONObject cancelRedeem(Redeem redeem) {
+        return this.client.executeSync(this.api.cancelRedeem( JSONObject.parseObject(JSON.toJSONString(redeem))));
+
+    }
 }

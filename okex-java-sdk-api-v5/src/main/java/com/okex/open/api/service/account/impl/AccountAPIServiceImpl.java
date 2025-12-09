@@ -393,4 +393,19 @@ public class AccountAPIServiceImpl implements AccountAPIService {
     public JSONObject setFeeType(AccountMode account) {
         return this.client.executeSync(this.api.setFeeType(account));
     }
+
+    @Override
+    public JSONObject setSettleCurrency(AccountMode account) {
+        return this.client.executeSync(this.api.setSettleCurrency(account));
+    }
+
+    @Override
+    public JSONObject setPrecheckDeltaNeutral(String stgyType) {
+        return this.client.executeSync(this.api.setPrecheckDeltaNeutral(stgyType));
+    }
+
+    @Override
+    public JSONObject setTradingConfig(AccountMode account) {
+        return this.client.executeSync(this.api.setTradingConfig(account));
+    }
 }

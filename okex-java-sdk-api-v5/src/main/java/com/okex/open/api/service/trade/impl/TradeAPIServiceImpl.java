@@ -117,14 +117,14 @@ public class TradeAPIServiceImpl implements TradeAPIService {
 
     //获取未完成策略委托单列表 Get Algo Order List
     @Override
-    public JSONObject getAlgoOrderList(String algoId, String instType, String instId, String ordType,String algoClOrdId, String after, String before, String limit) {
-        return this.client.executeSync(this.tradeAPI.getAlgoOrderList(algoId, instType, instId, ordType,algoClOrdId, after, before, limit));
+    public JSONObject getAlgoOrderList(String algoId, String instType, String instId, String ordType,String algoClOrdId, String after, String before, String limit,String advanceOrdType) {
+        return this.client.executeSync(this.tradeAPI.getAlgoOrderList(algoId, instType, instId, ordType,algoClOrdId, after, before, limit, advanceOrdType));
     }
 
     //获取历史策略委托单列表 Get Algo Order History
     @Override
-    public JSONObject getAlgoOrderHistory(String state, String algoId, String instType, String instId, String ordType, String clOrdId,String after, String before, String limit) {
-        return this.client.executeSync(this.tradeAPI.getAlgoOrderHistory(state, algoId, instType, instId, ordType, clOrdId, after, before, limit));
+    public JSONObject getAlgoOrderHistory(String state, String algoId, String instType, String instId, String ordType, String clOrdId,String after, String before, String limit,String advanceOrdType) {
+        return this.client.executeSync(this.tradeAPI.getAlgoOrderHistory(state, algoId, instType, instId, ordType, clOrdId, after, before, limit, advanceOrdType));
     }
 
     //获取一键兑换主流币币种列表  Get easy convert currency list
@@ -165,8 +165,8 @@ public class TradeAPIServiceImpl implements TradeAPIService {
 
     //获取策略委托单信息
     @Override
-    public JSONObject getAlgoOrderDetails(String algoId, String algoClOrdId) {
-        return this.client.executeSync(this.tradeAPI.getAlgoOrderDetails(algoId, algoClOrdId));
+    public JSONObject getAlgoOrderDetails(String algoId, String algoClOrdId,String advanceOrdType) {
+        return this.client.executeSync(this.tradeAPI.getAlgoOrderDetails(algoId, algoClOrdId, advanceOrdType));
     }
 
     @Override

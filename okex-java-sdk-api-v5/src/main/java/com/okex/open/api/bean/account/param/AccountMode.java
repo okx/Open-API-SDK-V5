@@ -20,6 +20,35 @@ public class AccountMode {
     }
 
     private String feeType;
+    private String type;
+
+    public String getStgyType() {
+        return stgyType;
+    }
+
+    public void setStgyType(String stgyType) {
+        this.stgyType = stgyType;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    private String stgyType;
+
+    public String getSettleCcy() {
+        return settleCcy;
+    }
+
+    public void setSettleCcy(String settleCcy) {
+        this.settleCcy = settleCcy;
+    }
+
+    private String settleCcy;
     @Override
     public String toString() {
         return "AccountMode{" +

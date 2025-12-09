@@ -173,4 +173,10 @@ public interface AccountAPIService {
     JSONObject positionBuilderGraph(PositionBuilderGraph positionBuilderGraph);
 
     JSONObject setFeeType(AccountMode account);
+
+    JSONObject setSettleCurrency(AccountMode account);
+
+    JSONObject setPrecheckDeltaNeutral(String stgyType);
+
+    JSONObject setTradingConfig(AccountMode account);
 }

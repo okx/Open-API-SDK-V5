@@ -58,10 +58,10 @@ public interface TradeAPIService {
     JSONObject cancelAdvanceAlgoOrders(List<CancelAlgoOrder> cancelAlgoOrder);
 
     //获取未完成策略委托单列表 Get Algo Order List
-    JSONObject getAlgoOrderList(String algoId, String instType, String instId, String ordType,String algoClOrdId, String after, String before, String limit);
+    JSONObject getAlgoOrderList(String algoId, String instType, String instId, String ordType,String algoClOrdId, String after, String before, String limit,String advanceOrdType);
 
     //获取历史策略委托单列表 Get Algo Order History
-    JSONObject getAlgoOrderHistory(String state, String algoId, String instType, String instId, String ordType,String clOrdId, String after, String before, String limit);
+    JSONObject getAlgoOrderHistory(String state, String algoId, String instType, String instId, String ordType,String clOrdId, String after, String before, String limit,String advanceOrdType);
 
     //获取一键兑换主流币币种列表  Get easy convert currency list
     JSONObject getEasyConvertCurrencyList(String source);
@@ -82,7 +82,7 @@ public interface TradeAPIService {
     JSONObject getOneClickRepayHistory(String after,String before,String limit);
 
 
-    JSONObject getAlgoOrderDetails(String algoId, String algoClOrdId);
+    JSONObject getAlgoOrderDetails(String algoId, String algoClOrdId,String advanceOrdType);
 
 
     JSONObject amendAlgos(AmendAlgos amendAlgos);

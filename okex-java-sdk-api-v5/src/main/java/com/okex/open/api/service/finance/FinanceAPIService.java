@@ -64,4 +64,6 @@ public interface FinanceAPIService {
     JSONObject getApyHistory(String days);
 
     JSONObject getProductInfo(String fastRedemptionDailyLimit, String fastRedemptionAvail);
+
+    JSONObject cancelRedeem(Redeem redeem);
 }

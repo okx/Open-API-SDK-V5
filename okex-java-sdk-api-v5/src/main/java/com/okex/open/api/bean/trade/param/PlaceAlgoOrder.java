@@ -13,6 +13,16 @@ public class PlaceAlgoOrder {
     private Boolean reduceOnly;
     private String algoClOrdId;
 
+    public String getAdvanceOrdType() {
+        return advanceOrdType;
+    }
+
+    public void setAdvanceOrdType(String advanceOrdType) {
+        this.advanceOrdType = advanceOrdType;
+    }
+
+    private String advanceOrdType;
+
 
     public List<AttachAlgoOrds> getAttachAlgoOrdsList() {
         return attachAlgoOrdsList;

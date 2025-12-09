@@ -53,4 +53,9 @@ public class ETHPledgeAPIServiceImpl implements ETHPledgeAPIService {
         return this.client.executeSync(this.api.getProductInfo());
     }
 
+    @Override
+    public JSONObject cancelRedeem(Redeem redeem) {
+        return this.client.executeSync(this.api.cancelRedeem(JSONObject.parseObject(JSON.toJSONString(redeem))));
+    }
+
 }

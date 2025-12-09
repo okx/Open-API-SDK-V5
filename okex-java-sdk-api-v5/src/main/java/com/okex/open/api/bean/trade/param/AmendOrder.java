@@ -18,6 +18,16 @@ public class AmendOrder {
 
     private String newPxUsd;
 
+    public String getInstIdCode() {
+        return instIdCode;
+    }
+
+    public void setInstIdCode(String instIdCode) {
+        this.instIdCode = instIdCode;
+    }
+
+    private String instIdCode;
+
 
     public ArrayList<AttachAlgoOrds> getAttachAlgoOrds() {
         return attachAlgoOrds;

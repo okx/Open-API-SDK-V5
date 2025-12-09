@@ -20,6 +20,45 @@ public class AttachAlgoOrds {
 
     private String sz;
     private String amendPxOnTriggerType;
+    private String newTpTriggerRatio;
+    private String tpTriggerRatio;
+
+    public String getSlTriggerRatio() {
+        return slTriggerRatio;
+    }
+
+    public void setSlTriggerRatio(String slTriggerRatio) {
+        this.slTriggerRatio = slTriggerRatio;
+    }
+
+    public String getTpTriggerRatio() {
+        return tpTriggerRatio;
+    }
+
+    public void setTpTriggerRatio(String tpTriggerRatio) {
+        this.tpTriggerRatio = tpTriggerRatio;
+    }
+
+    private String slTriggerRatio;
+
+    public String getNewSlTriggerRatio() {
+        return newSlTriggerRatio;
+    }
+
+    public void setNewSlTriggerRatio(String newSlTriggerRatio) {
+        this.newSlTriggerRatio = newSlTriggerRatio;
+    }
+
+    public String getNewTpTriggerRatio() {
+        return newTpTriggerRatio;
+    }
+
+    public void setNewTpTriggerRatio(String newTpTriggerRatio) {
+        this.newTpTriggerRatio = newTpTriggerRatio;
+    }
+
+    private String newSlTriggerRatio;
+
 
 
     public String getNewTpOrdKind() {

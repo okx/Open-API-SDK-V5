@@ -257,4 +257,10 @@ public interface AccountAPI {
     Call<JSONObject> positionBuilderGraph(@Body PositionBuilderGraph positionBuilderGraph);
     @POST("/api/v5/account/set-fee-type")
     Call<JSONObject> setFeeType(@Body AccountMode account);
+    @POST("/api/v5/account/set-settle-currency")
+    Call<JSONObject> setSettleCurrency(@Body AccountMode account);
+    @GET("/api/v5/account/precheck-set-delta-neutral")
+    Call<JSONObject> setPrecheckDeltaNeutral(@Query("stgyType") String stgyType);
+    @POST("/api/v5/account/set-trading-config" )
+    Call<JSONObject> setTradingConfig(@Body AccountMode account);
 }

@@ -28,4 +28,6 @@ public interface ETHPledgeAPI {
 
     @GET("/api/v5/finance/staking-defi/eth/product-info")
     Call<JSONObject> getProductInfo();
+    @POST("/api/v5/finance/staking-defi/eth/cancel-redeem")
+    Call<JSONObject> cancelRedeem(@Body JSONObject jsonObject);
 }

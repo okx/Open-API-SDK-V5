@@ -348,5 +348,15 @@ public class FinanceAPITest extends FinanceAPIBaseTests {
         JSONObject result = this.financeAPIService.getApyHistory("");
         toResultString(LOG, "result", result);
     }
-
+    /**
+     * 撤销赎回 cancel-redeem
+     * POST /api/v5/finance/staking-defi/sol/cancel-redeem
+     */
+    @Test
+    public void cancelRedeem(){
+        Redeem redeem = new Redeem();
+        redeem.setOrdId("");
+        JSONObject result = this.financeAPIService.cancelRedeem(redeem);
+        toResultString(LOG, "result", result);
+    }
 }

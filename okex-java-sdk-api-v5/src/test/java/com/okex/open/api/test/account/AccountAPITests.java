@@ -852,4 +852,37 @@ public class AccountAPITests extends  AccountAPIBaseTests {
         JSONObject result = this.accountAPIService.setFeeType(account);
         toResultString(LOG, "result", result);
     }
+    /**
+     * 设置结算币种。set-settle-currency
+     * POST /api/v5/account/set-settle-currency
+     */
+    @Test
+    public void setSettleCurrency(){
+        AccountMode account = new AccountMode();
+        account.setSettleCcy("");
+        JSONObject result = this.accountAPIService.setSettleCurrency(account);
+        toResultString(LOG, "result", result);
+    }
+    /**
+     * 设置Delta中性预检查。precheck-set-delta-neutral
+     * GET /api/v5/account/precheck-set-delta-neutral
+     */
+    @Test
+    public void setPrecheckDeltaNeutral(){
+
+        JSONObject result = this.accountAPIService.setPrecheckDeltaNeutral("");
+        toResultString(LOG, "result", result);
+    }
+    /**
+     * 设置交易配置。set-trading-config
+     * POST /api/v5/account/set-trading-config
+     */
+    @Test
+    public void setTradingConfig(){
+        AccountMode account = new AccountMode();
+        account.setType("stgyType");
+        account.setStgyType("");
+        JSONObject result = this.accountAPIService.setTradingConfig(account);
+        toResultString(LOG, "result", result);
+    }
 }
