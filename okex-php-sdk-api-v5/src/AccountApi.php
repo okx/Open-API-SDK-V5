@@ -792,4 +792,32 @@ class AccountApi extends Utils
 
         return $this->request('/api/v5/account/set-settle-currency', $params, 'POST');
     }
+
+    public function setFeeType($feeType)
+    {
+        $params = [
+            'feeType' => $feeType,
+        ];
+
+        return $this->request('/api/v5/account/set-fee-type', $params, 'POST');
+    }
+
+    public function setTradingConfig($type,$stgyType='')
+    {
+        $params = [
+            'type' => $type,
+            'stgyType' => $stgyType,
+        ];
+
+        return $this->request('/api/v5/account/set-trading-config', $params, 'POST');
+    }
+
+    public function precheckSetDeltaNeutral($stgyType)
+    {
+        $params = [
+            'stgyType' => $stgyType,
+        ];
+
+        return $this->request('/api/v5/account/precheck-set-delta-neutral', $params, 'POST');
+    }
 }

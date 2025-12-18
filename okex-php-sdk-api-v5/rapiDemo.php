@@ -76,6 +76,8 @@ $coin = "XMR";
 //$res = $obj -> getInterestAccrued('','','','','','','10');
 //获取用户当前市场借币利率
 //$res = $obj -> getInterestRate('');
+//设置手续费计价方式
+//$res = $obj -> setFeeType('');
 // 期权greeks的PA/BS切换
 //$res = $obj -> setGreeks('PA');
 //逐仓交易设置
@@ -136,6 +138,10 @@ $coin = "XMR";
 // $res = $obj -> setAutoEarn('');
 //设置结算币种
 // $res = $obj -> setSettleCurrency('');
+//设置交易配置
+// $res = $obj -> setTradingConfig('');
+//设置Delta中性预检查
+// $res = $obj -> precheckSetDeltaNeutral('');
 
 
 /**
@@ -652,6 +658,8 @@ $obj = new FinanceApi(Config::$config);
 //$res = $obj -> ethPurchase('');
 //赎回
 //$res = $obj -> ethRedeem('');
+//撤销赎回
+//$res = $obj -> cancelRedeem('');
 //获取余额
 //$res = $obj -> ethBalance('');
 // 获取申购赎回记录

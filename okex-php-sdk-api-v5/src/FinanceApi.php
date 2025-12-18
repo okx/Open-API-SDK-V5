@@ -375,6 +375,14 @@ class FinanceApi extends Utils
         return $this->request('/api/v5/finance/flexible-loan/interest-accrued', $params, 'GET');
     }
 
+    public function cancelRedeem($ordId=''){
+        $params = [
+            'ordId' => $ordId,
+        ];
+
+        return $this->request('/api/v5/finance/staking-defi/eth/cancel-redeem', $params, 'POST');
+    }
+
     
     
 
