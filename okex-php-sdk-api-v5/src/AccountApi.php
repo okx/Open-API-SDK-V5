@@ -783,4 +783,13 @@ class AccountApi extends Utils
 
         return $this->request('/api/v5/account/position-builder-graph', $params, 'POST');
     }
+
+    public function setSettleCurrency($settleCcy)
+    {
+        $params = [
+            'settleCcy' => $settleCcy,
+        ];
+
+        return $this->request('/api/v5/account/set-settle-currency', $params, 'POST');
+    }
 }

@@ -134,6 +134,8 @@ $coin = "XMR";
 // $res = $obj -> movePositionsHistory('');
 //设置自动赚币
 // $res = $obj -> setAutoEarn('');
+//设置结算币种
+// $res = $obj -> setSettleCurrency('');
 
 
 /**
