@@ -20,9 +20,9 @@ import okx.SprdApi_api as Sprd
 import okx.Singal_api as Signal
 
 if __name__ == '__main__':
-    api_key = "Your apikey"
-    secret_key = "Your secretkey"
-    passphrase = "Your passphrase"
+    # api_key = "Your apikey"
+    # secret_key = "Your secretkey"
+    # passphrase = "Your passphrase"
 
     # flag是实盘与模拟盘的切换参数 flag is the key parameter which can help you to change between demo and real trading.
     flag = '1'  # 模拟盘 demo trading
@@ -178,7 +178,12 @@ if __name__ == '__main__':
     # result = accountAPI.get_move_positions_history(blockTdId='',clientId='',beginTs='',endTs='',limit='',state='')
     # 设置自动赚币 POST /api/v5/account/set-auto-earn
     # result = accountAPI.set_auto_earn(earnType = '1', ccy = 'BTC', action = 'turn_off', apr = '')
-
+    # 设置结算币种 POST /api/v5/account/set-settle-currency
+    # result = accountAPI.set_settle_currency(settleCcy='USDC')
+    # 设置Delta中性预检查 GET /api/v5/account/precheck-set-delta-neutral
+    # result = accountAPI.precheck_set_delta_neutral(stgyType='')
+    # 设置交易配置 POST /api/v5/account/set-trading-config
+    # result = accountAPI.set_trading_config(type='', stgyType='')
 
     # funding api
     fundingAPI = Funding.FundingAPI(api_key, secret_key, passphrase, False, flag)
@@ -390,16 +395,16 @@ if __name__ == '__main__':
     # trade api
     tradeAPI = Trade.TradeAPI(api_key, secret_key, passphrase, False, flag)
     # 下单  Place Order
-    result = tradeAPI.place_order(instId='BTC-USDT-SWAP', tdMode='isolated', ccy='', clOrdId='', tag='',
-                                  side='buy', posSide='long', ordType='market', sz='0.1', px='86000',tradeQuoteCcy = '',
-                                  pxUsd='', pxVol='', reduceOnly='', tgtCcy='', banAmend='', stpMode='',pxAmendType = '',
-                                  # attachAlgoOrds = [{"tachAlgoClOrdId":"",
-                                  #                    "slTriggerPxType":"",
-                                  #                    "tpTriggerPx":"",
-                                  #                    "slOrdPx":"",
-                                  #                    "slTriggerPx":"",
-                                  #                    "tpOrdPx":""}]
-                                )
+    # result = tradeAPI.place_order(instId='BTC-USDT-SWAP', tdMode='isolated', ccy='', clOrdId='', tag='',
+    #                               side='buy', posSide='long', ordType='market', sz='0.1', px='86000',tradeQuoteCcy = '',
+    #                               pxUsd='', pxVol='', reduceOnly='', tgtCcy='', banAmend='', stpMode='',pxAmendType = '',
+    #                               # attachAlgoOrds = [{"tachAlgoClOrdId":"",
+    #                               #                    "slTriggerPxType":"",
+    #                               #                    "tpTriggerPx":"",
+    #                               #                    "slOrdPx":"",
+    #                               #                    "slTriggerPx":"",
+    #                               #                    "tpOrdPx":""}]
+    #                             )
     # 批量下单  Place Multiple Orders
     # result = tradeAPI.place_multiple_orders([
     #     {'instId': 'BTC-USD-210402', 'tdMode': 'isolated', 'side': 'buy', 'ordType': 'limit', 'sz': '1', 'px': '17400',
@@ -443,11 +448,11 @@ if __name__ == '__main__':
     # 策略委托下单  Place Algo Order
     # result = tradeAPI.place_algo_order('BTC-USDT-SWAP', 'isolated', 'buy', ordType='conditional',
     #                                    sz='100',posSide='long', tpTriggerPx='60000', tpOrdPx='59999',
-    #                                   tpTriggerPxType = 'last', slTriggerPxType = 'last', algoClOrdId ='123456',tradeQuoteCcy = '',
+    #                                   tpTriggerPxType = 'last', slTriggerPxType = 'last', algoClOrdId ='123456',tradeQuoteCcy = '', advanceOrdType ='',
     #                                    quickMgnType='', closeFraction = '1',cxlOnClosePos= '', attachAlgoClOrdId='',
     #                                    )
     # 撤销策略委托订单  Cancel Algo Order
-    # result = tradeAPI.cancel_algo_order([{'algoId': '297394002194735104', 'instId': 'BTC-USDT-210409'}])
+    # result = tradeAPI.cancel_algo_order([{'algoId': '297394002194735104', 'instId': 'BTC-USDT-210409', 'algoClOrdId':''}])
     # 修改策略委托订单 POST AMEND ALGOS
     # result = tradeAPI.amend_algos(instId = '', algoId = '', algoClOrdId = '', cxlOnFail = '', reqId = '', newSz = '',
     #     newTpTriggerPx = '', newTpOrdPx = '', newTpTriggerPxType = '',

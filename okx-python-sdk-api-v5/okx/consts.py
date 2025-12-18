@@ -83,6 +83,9 @@ MOVE_ASSETS = '/api/v5/account/move-positions'
 GET_MOVE_POS_HISTORY = '/api/v5/account/move-positions-history'
 SET_FEE_TYPE = '/api/v5/account/set-fee-type'
 SET_AUTO_EARN = '/api/v5/account/set-auto-earn'
+SET_SETTLE_CURRENCY = '/api/v5/account/set-settle-currency'
+PRECHECK_SET_DELTA_NEUTRAL = '/api/v5/account/precheck-set-delta-neutral'
+SET_TRADING_CONFIG = '/api/v5/account/set-trading-config'
 
 # funding
 DEPOSIT_ADDRESS = '/api/v5/asset/deposit-address'

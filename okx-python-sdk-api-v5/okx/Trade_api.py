@@ -81,7 +81,7 @@ class TradeAPI(Client):
         return self._request_with_params(GET, ORDER_FILLS, params)
 
     # Place Algo Order
-    def place_algo_order(self, instId='', tdMode='', side='', ordType='', sz='', ccy='',
+    def place_algo_order(self, instId='', tdMode='', side='', ordType='', sz='', ccy='', advanceOrdType ='',
                          posSide='', reduceOnly='', tpTriggerPx='',
                          tpOrdPx='', slTriggerPx='', slOrdPx='',
                          triggerPx='', orderPx='', tgtCcy='', pxVar='',
@@ -89,7 +89,7 @@ class TradeAPI(Client):
                          szLimit='', pxLimit='', timeInterval='', tpTriggerPxType='', slTriggerPxType='',
                          callbackRatio='',callbackSpread='',activePx='',tag='',triggerPxType='',
                          algoClOrdId='',quickMgnType='',closeFraction='', attachAlgoClOrdId='',attachAlgoOrds=[]):
-        params = {'instId': instId, 'tdMode': tdMode, 'side': side, 'ordType': ordType, 'sz': sz, 'ccy': ccy,
+        params = {'instId': instId, 'tdMode': tdMode, 'side': side, 'ordType': ordType, 'sz': sz, 'ccy': ccy, 'advanceOrdType' :advanceOrdType,
                   'posSide': posSide, 'reduceOnly': reduceOnly, 'tpTriggerPx': tpTriggerPx, 'tpOrdPx': tpOrdPx,
                   'slTriggerPx': slTriggerPx, 'slOrdPx': slOrdPx, 'triggerPx': triggerPx, 'orderPx': orderPx,
                   'tgtCcy': tgtCcy, 'pxVar': pxVar, 'szLimit': szLimit, 'pxLimit': pxLimit,

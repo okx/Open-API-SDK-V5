@@ -357,8 +357,23 @@ class AccountAPI(Client):
     def get_move_positions_history(self,blockTdId='',clientId='',beginTs='',endTs='',limit='',state=''):
         params={'blockTdId': blockTdId, 'clientId': clientId,'beginTs': beginTs, 'endTs': endTs,'limit': limit, 'state': state,}
         return self._request_with_params(GET, GET_MOVE_POS_HISTORY, params)
+    
+    # GET /api/v5/account/precheck-set-delta-neutral
+    def precheck_set_delta_neutral(self,stgyType=''):
+        params={'stgyType': stgyType}
+        return self._request_with_params(GET, PRECHECK_SET_DELTA_NEUTRAL, params)
 
     # POST /api/v5/account/set-auto-earn
     def set_auto_earn(self,earnType = '', ccy = '', action = '', apr = ''):
         params = {'earnType':earnType, 'ccy':ccy, 'action':action, 'apr':apr}
         return self._request_with_params(POST, SET_AUTO_EARN, params)
+
+    # POST /api/v5/account/set-settle-currency
+    def set_settle_currency(self,settleCcy = ''):
+        params = {'settleCcy':settleCcy}
+        return self._request_with_params(POST, SET_SETTLE_CURRENCY, params)
+    
+    # POST /api/v5/account/set-trading-config
+    def set_trading_config(self,type = '', stgyType = ''):
+        params = {'type	':type	, 'stgyType':stgyType}
+        return self._request_with_params(POST, SET_TRADING_CONFIG, params)
