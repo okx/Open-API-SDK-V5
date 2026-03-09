@@ -286,17 +286,18 @@ class FundingApi extends Utils
         return $this->request('/api/v5/asset/convert/currencies','', 'GET');
     }
 
-    public function currencyPair($fromCcy,$toCcy)
+    public function currencyPair($fromCcy,$toCcy,$convertMode='')
     {
         $params = [
             'fromCcy' => $fromCcy,
             'toCcy' => $toCcy,
+            'convertMode' => $convertMode,
         ];
 
         return $this->request('/api/v5/asset/convert/currency-pair',$params, 'GET');
     }
     
-    public function estimateQuote($baseCcy,$quoteCcy,$side,$rfqSz,$rfqSzCcy,$clQReqId='',$tag='')
+    public function estimateQuote($baseCcy,$quoteCcy,$side,$rfqSz,$rfqSzCcy,$clQReqId='',$tag='',$convertMode='')
     {
         $params = [
             'baseCcy' => $baseCcy,
@@ -306,12 +307,13 @@ class FundingApi extends Utils
             'rfqSzCcy' => $rfqSzCcy,
             'clQReqId' => $clQReqId,
             'tag' => $tag,
+            'convertMode' => $convertMode,
         ];
 
         return $this->request('/api/v5/asset/convert/estimate-quote',$params, 'POST');
     }
 
-    public function trade($quoteId,$baseCcy,$quoteCcy,$side,$sz,$szCcy,$clQReqId='',$tag='')
+    public function trade($quoteId,$baseCcy,$quoteCcy,$side,$sz,$szCcy,$clQReqId='',$tag='',$convertMode='')
     {
         $params = [
             'quoteId' => $quoteId,
@@ -322,6 +324,7 @@ class FundingApi extends Utils
             'szCcy' => $szCcy,
             'clQReqId' => $clQReqId,
             'tag' => $tag,
+            'convertMode' => $convertMode,
         ];
 
         return $this->request('/api/v5/asset/convert/trade',$params, 'POST');

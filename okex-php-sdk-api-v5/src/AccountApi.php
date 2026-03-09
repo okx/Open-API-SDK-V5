@@ -163,13 +163,13 @@ class AccountApi extends Utils
         return $this->request('/api/v5/account/max-loan', $params, 'GET');
     }
 
-    public function getTradeFee($instType,$instId='',$uly='',$category='')
+    public function getTradeFee($instType,$instId='',$instFamily='',$groupId='')
     {
         $params = [
             'instType' => $instType,
             'instId' => $instId,
-            'uly' => $uly,
-            'category' => $category,
+            'instFamily' => $instFamily,
+            'groupId' => $groupId,
         ];
 
         return $this->request('/api/v5/account/trade-fee', $params, 'GET');
