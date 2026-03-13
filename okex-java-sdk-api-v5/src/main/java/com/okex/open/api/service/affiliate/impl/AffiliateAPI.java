@@ -17,4 +17,7 @@ public interface AffiliateAPI {
 
     @GET("/api/v5/users/partner/if-rebate")
     Call<JSONObject> getPartner(@Query("apiKey")String apiKey);
+
+    @GET("/api/v5/affiliate/invitee/list")
+    Call<JSONObject> getInviteeList(@Query("begin")String begin, @Query("end")String end, @Query("limit")String limit);
 }

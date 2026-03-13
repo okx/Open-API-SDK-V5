@@ -11,4 +11,6 @@ public interface AffiliateAPIService {
     JSONObject getInviteeDetail(String uid);
 
     JSONObject getPartner(String apiKey);
+
+    JSONObject getInviteeList(String begin, String end, String limit);
 }
