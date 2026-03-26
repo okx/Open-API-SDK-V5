@@ -726,6 +726,14 @@ $obj = new FinanceApi(Config::$config);
 //计息记录
 //$res = $obj -> flexibleLoanInterestAccrued('');
 
+/**
+ * 双币赢
+ */
+$obj = new FinanceApi(Config::$config);
+//获取币对
+//$res = $obj -> currencyPair();
+//获取产品信息
+//$res = $obj -> currencyPair();
 
 
 /**

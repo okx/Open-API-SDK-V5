@@ -383,7 +383,23 @@ class FinanceApi extends Utils
         return $this->request('/api/v5/finance/staking-defi/eth/cancel-redeem', $params, 'POST');
     }
 
-    
+    public function currencyPair(){
+        $params = [
+            
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/currency-pair', $params, 'GET');
+    }
+
+    public function products($baseCcy,$quoteCcy,$optType){
+        $params = [
+            'baseCcy' => $baseCcy,
+            'quoteCcy' => $quoteCcy,
+            'optType' => $optType,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/products', $params, 'GET');
+    }
     
 
 }
