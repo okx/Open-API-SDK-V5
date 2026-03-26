@@ -17,6 +17,6 @@ Config::$config=[
        "apiSecret"=>"",
        "passphrase"=>"",
    //    是否为模拟盘
-       "paper"=>1
+       "paper"=>0
 
 ];

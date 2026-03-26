@@ -107,9 +107,12 @@ class FundingApi extends Utils
         return $this->request('/api/v5/asset/convert-dust-assets',$params, 'POST');
     }
 
-    public function getCurrencies()
+    public function getCurrencies($ccy='')
     {
-        return $this->request('/api/v5/asset/currencies','', 'GET');
+        $params = [
+            'ccy' => $ccy,
+        ];
+        return $this->request('/api/v5/asset/currencies',$params, 'GET');
     }
 
     public function PurchaseRedempt($ccy,$amt,$side,$rate)

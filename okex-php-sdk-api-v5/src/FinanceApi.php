@@ -400,6 +400,65 @@ class FinanceApi extends Utils
 
         return $this->request('/api/v5/finance/sfp/dcd/products', $params, 'GET');
     }
+
+    public function quote($productId,$notionalSz,$notionalCcy){
+        $params = [
+            'productId' => $productId,
+            'notionalSz' => $notionalSz,
+            'notionalCcy' => $notionalCcy,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/quote', $params, 'POST');
+    }
+
+    public function trade($quoteId){
+        $params = [
+            'quoteId' => $quoteId,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/trade', $params, 'POST');
+    }
+
+    public function redeemQuote($ordId){
+        $params = [
+            'ordId' => $ordId,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/redeem-quote', $params, 'POST');
+    }
+
+    public function dcdRedeem($ordId,$quoteId){
+        $params = [
+            'ordId' => $ordId,
+            'quoteId' => $quoteId,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/redeem', $params, 'POST');
+    }
+
+    public function orderStatus($ordId){
+        $params = [
+            'ordId' => $ordId,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/order-status', $params, 'GET');
+    }
+
+    public function orderHistory($ordId='',$productId='',$uly='',$state='',$beginId='',$endId='',$begin='',$end='',$limit=''){
+        $params = [
+            'ordId' => $ordId,
+            'productId' => $productId,
+            'uly' => $uly,
+            'state' => $state,
+            'beginId' => $beginId,
+            'endId' => $endId,
+            'begin' => $begin,
+            'end' => $end,
+            'limit' => $limit,
+        ];
+
+        return $this->request('/api/v5/finance/sfp/dcd/order-history', $params, 'GET');
+    }
     
 
 }

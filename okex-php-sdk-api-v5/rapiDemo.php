@@ -151,7 +151,7 @@ $instrumentId = "EOS-USDT";
 $currency = "EOS";
 $obj = new FundingApi(Config::$config);
 // 获取币种列表
-// $res = $obj -> getCurrencies('USDC');
+// $res = $obj -> getCurrencies('POL');
 // 获取资金账户余额
 //$res = $obj -> getBalance('BTC');
 // 获取不可交易资产
@@ -733,7 +733,19 @@ $obj = new FinanceApi(Config::$config);
 //获取币对
 //$res = $obj -> currencyPair();
 //获取产品信息
-//$res = $obj -> currencyPair();
+//$res = $obj -> products();
+//获取报价
+//$res = $obj -> quote();
+//下单
+//$res = $obj -> trade();
+//获取赎回报价
+//$res = $obj -> redeemQuote();
+//赎回
+//$res = $obj -> dcdRedeem();
+//获取订单状态
+//$res = $obj -> dcdRedeem();
+//获取历史订单
+//$res = $obj -> orderHistory();
 
 
 /**
