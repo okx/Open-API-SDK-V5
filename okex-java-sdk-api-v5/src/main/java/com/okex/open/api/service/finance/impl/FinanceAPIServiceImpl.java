@@ -6,6 +6,7 @@ import com.okex.open.api.bean.earn.param.Purchase;
 import com.okex.open.api.bean.earn.param.Redeem;
 import com.okex.open.api.bean.finance.param.AmendFinance;
 import com.okex.open.api.bean.finance.param.Finance;
+import com.okex.open.api.bean.finance.param.FinanceSFP;
 import com.okex.open.api.client.APIClient;
 import com.okex.open.api.config.APIConfiguration;
 import com.okex.open.api.service.finance.FinanceAPIService;
@@ -169,5 +170,51 @@ public class FinanceAPIServiceImpl implements FinanceAPIService {
     public JSONObject cancelRedeem(Redeem redeem) {
         return this.client.executeSync(this.api.cancelRedeem( JSONObject.parseObject(JSON.toJSONString(redeem))));
 
+    }
+
+    @Override
+    public JSONObject getCurrencyPair() {
+        return this.client.executeSync(this.api.getCurrencyPair());
+
+    }
+
+    @Override
+    public JSONObject getProducts(String baseCcy, String quoteCcy, String optType) {
+        return this.client.executeSync(this.api.getProducts(baseCcy,  quoteCcy,  optType));
+    }
+
+    @Override
+    public JSONObject quote(FinanceSFP financeSFP) {
+        return this.client.executeSync(this.api.quote( JSONObject.parseObject(JSON.toJSONString(financeSFP))));
+
+    }
+
+    @Override
+    public JSONObject trade(FinanceSFP financeSFP) {
+        return this.client.executeSync(this.api.trade( JSONObject.parseObject(JSON.toJSONString(financeSFP))));
+
+    }
+
+    @Override
+    public JSONObject getRedeemQuote(FinanceSFP financeSFP) {
+        return this.client.executeSync(this.api.getRedeemQuote( JSONObject.parseObject(JSON.toJSONString(financeSFP))));
+
+    }
+
+    @Override
+    public JSONObject redeem(FinanceSFP financeSFP) {
+        return this.client.executeSync(this.api.redeem( JSONObject.parseObject(JSON.toJSONString(financeSFP))));
+
+    }
+
+    @Override
+    public JSONObject getOrderStatus(String ordId) {
+        return this.client.executeSync(this.api.getOrderStatus(ordId));
+
+    }
+
+    @Override
+    public JSONObject getOrderHistory(String ordId, String productId, String uly, String state, String beginId, String endId, String begin, String end, String limit) {
+        return this.client.executeSync(this.api.getOrderHistory(ordId,  productId,  uly,  state,  beginId,  endId,  begin,  end,  limit));
     }
 }

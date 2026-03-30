@@ -885,4 +885,14 @@ public class AccountAPITests extends  AccountAPIBaseTests {
         JSONObject result = this.accountAPIService.setTradingConfig(account);
         toResultString(LOG, "result", result);
     }
+    /**
+     * 获取账单类型 subtypes
+     * GET /api/v5/account/subtypes
+     */
+    @Test
+    public void getSubtypes(){
+
+        JSONObject result = this.accountAPIService.getSubtypes("");
+        toResultString(LOG, "result", result);
+    }
 }

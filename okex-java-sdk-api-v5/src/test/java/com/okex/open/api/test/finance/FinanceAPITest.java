@@ -6,6 +6,7 @@ import com.okex.open.api.bean.earn.param.Purchase;
 import com.okex.open.api.bean.earn.param.Redeem;
 import com.okex.open.api.bean.finance.param.AmendFinance;
 import com.okex.open.api.bean.finance.param.Finance;
+import com.okex.open.api.bean.finance.param.FinanceSFP;
 import com.okex.open.api.bean.finance.param.SupCollateral;
 import com.okex.open.api.bean.trade.param.ClosePositions;
 import com.okex.open.api.service.finance.FinanceAPIService;
@@ -357,6 +358,95 @@ public class FinanceAPITest extends FinanceAPIBaseTests {
         Redeem redeem = new Redeem();
         redeem.setOrdId("");
         JSONObject result = this.financeAPIService.cancelRedeem(redeem);
+        toResultString(LOG, "result", result);
+    }
+    //双币赢
+    /**
+     * 获取币对 currency-pair
+     * GET /api/v5/finance/sfp/dcd/currency-pair
+     */
+    @Test
+    public void getCurrencyPair(){
+
+        JSONObject result = this.financeAPIService.getCurrencyPair();
+        toResultString(LOG, "result", result);
+    }
+    /**
+     * 获取产品信息 products
+     * GET /api/v5/finance/sfp/dcd/products
+     */
+    @Test
+    public void getProducts(){
+
+        JSONObject result = this.financeAPIService.getProducts("","","");
+        toResultString(LOG, "result", result);
+    }
+    /**
+     *  获取报价quote
+     * POST /api/v5/finance/sfp/dcd/quote
+     */
+    @Test
+    public void quote(){
+        FinanceSFP financeSFP = new FinanceSFP();
+        financeSFP.setProductId("");
+        financeSFP.setNotionalSz("");
+        financeSFP.setNotionalCcy("");
+        JSONObject result = this.financeAPIService.quote(financeSFP);
+        toResultString(LOG, "result", result);
+    }
+    /**
+     *  下单 trade
+     * POST /api/v5/finance/sfp/dcd/trade
+     */
+    @Test
+    public void trade(){
+        FinanceSFP financeSFP = new FinanceSFP();
+        financeSFP.setQuoteId("");
+        JSONObject result = this.financeAPIService.trade(financeSFP);
+        toResultString(LOG, "result", result);
+    }
+    /**
+     *  获取赎回报价redeem-quote
+     * POST /api/v5/finance/sfp/dcd/redeem-quote
+     */
+    @Test
+    public void getRedeemQuote(){
+        FinanceSFP financeSFP = new FinanceSFP();
+        financeSFP.setOrdId("");
+        JSONObject result = this.financeAPIService.getRedeemQuote(financeSFP);
+        toResultString(LOG, "result", result);
+    }
+    /**
+     *  赎回 redeem
+     * /api/v5/finance/sfp/dcd/redeem
+     */
+    @Test
+    public void redeem(){
+        FinanceSFP financeSFP = new FinanceSFP();
+        financeSFP.setOrdId("");
+        financeSFP.setQuoteId("");
+        JSONObject result = this.financeAPIService.redeem(financeSFP);
+        toResultString(LOG, "result", result);
+    }
+
+    /**
+     *  获取订单状态】 order-status
+     * GET /api/v5/finance/sfp/dcd/order-status
+     */
+    @Test
+    public void getOrderStatus(){
+
+        JSONObject result = this.financeAPIService.getOrderStatus("");
+        toResultString(LOG, "result", result);
+    }
+    /**
+     * 获取历史订单】 order-history
+     * GET /api/v5/finance/sfp/dcd/order-history
+     */
+    @Test
+    public void getOrderHistory(){
+
+        JSONObject result = this.financeAPIService.getOrderHistory("","","","","","","","","");
         toResultString(LOG, "result", result);
     }
 }

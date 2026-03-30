@@ -263,4 +263,7 @@ public interface AccountAPI {
     Call<JSONObject> setPrecheckDeltaNeutral(@Query("stgyType") String stgyType);
     @POST("/api/v5/account/set-trading-config" )
     Call<JSONObject> setTradingConfig(@Body AccountMode account);
+
+    @GET("/api/v5/account/subtypes")
+    Call<JSONObject> getSubtypes(@Query("type") String type);
 }

@@ -408,4 +408,9 @@ public class AccountAPIServiceImpl implements AccountAPIService {
     public JSONObject setTradingConfig(AccountMode account) {
         return this.client.executeSync(this.api.setTradingConfig(account));
     }
+
+    @Override
+    public JSONObject getSubtypes(String type) {
+        return this.client.executeSync(this.api.getSubtypes(type));
+    }
 }

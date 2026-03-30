@@ -91,4 +91,28 @@ public interface FinanceAPI {
     Call<JSONObject> getProductInfo(@Query("fastRedemptionDailyLimit") String fastRedemptionDailyLimit,@Query("fastRedemptionAvail")  String fastRedemptionAvail);
  @POST("/api/v5/finance/staking-defi/sol/cancel-redeem")
     Call<JSONObject> cancelRedeem(@Body JSONObject jsonObject);
+
+ @GET("/api/v5/finance/sfp/dcd/currency-pair")
+    Call<JSONObject> getCurrencyPair();
+
+ @GET("/api/v5/finance/sfp/dcd/products")
+ Call<JSONObject> getProducts(@Query("baseCcy") String baseCcy,@Query("quoteCcy")  String quoteCcy,@Query("optType")  String optType);
+
+ @POST("/api/v5/finance/sfp/dcd/quote")
+ Call<JSONObject> quote(@Body JSONObject jsonObject);
+
+ @POST("/api/v5/finance/sfp/dcd/trade")
+ Call<JSONObject> trade(@Body JSONObject jsonObject);
+
+ @POST("/api/v5/finance/sfp/dcd/redeem-quote")
+ Call<JSONObject> getRedeemQuote(@Body JSONObject jsonObject);
+
+ @POST("/api/v5/finance/sfp/dcd/redeem")
+ Call<JSONObject> redeem(@Body JSONObject jsonObject);
+
+ @GET("/api/v5/finance/sfp/dcd/order-status")
+ Call<JSONObject> getOrderStatus(@Query("ordId") String ordId);
+
+ @GET("/api/v5/finance/sfp/dcd/order-history")
+ Call<JSONObject> getOrderHistory(@Query("ordId")String ordId,@Query("productId") String productId,@Query("uly") String uly,@Query("state") String state,@Query("beginId") String beginId,@Query("endId") String endId,@Query("begin") String begin,@Query("end") String end,@Query("limit") String limit);
 }

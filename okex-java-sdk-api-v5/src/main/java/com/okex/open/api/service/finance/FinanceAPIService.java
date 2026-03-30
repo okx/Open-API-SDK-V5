@@ -6,6 +6,7 @@ import com.okex.open.api.bean.earn.param.Purchase;
 import com.okex.open.api.bean.earn.param.Redeem;
 import com.okex.open.api.bean.finance.param.AmendFinance;
 import com.okex.open.api.bean.finance.param.Finance;
+import com.okex.open.api.bean.finance.param.FinanceSFP;
 
 public interface FinanceAPIService {
 
@@ -66,4 +67,20 @@ public interface FinanceAPIService {
     JSONObject getProductInfo(String fastRedemptionDailyLimit, String fastRedemptionAvail);
 
     JSONObject cancelRedeem(Redeem redeem);
+
+    JSONObject getCurrencyPair();
+
+    JSONObject getProducts(String baseCcy, String quoteCcy, String optType);
+
+    JSONObject quote(FinanceSFP financeSFP);
+
+    JSONObject trade(FinanceSFP financeSFP);
+
+    JSONObject getRedeemQuote(FinanceSFP financeSFP);
+
+    JSONObject redeem(FinanceSFP financeSFP);
+
+    JSONObject getOrderStatus(String ordId);
+
+    JSONObject getOrderHistory(String ordId, String productId, String uly, String state, String beginId, String endId, String begin, String end, String limit);
 }

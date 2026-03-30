@@ -179,4 +179,6 @@ public interface AccountAPIService {
     JSONObject setPrecheckDeltaNeutral(String stgyType);
 
     JSONObject setTradingConfig(AccountMode account);
+
+    JSONObject getSubtypes(String type);
 }
