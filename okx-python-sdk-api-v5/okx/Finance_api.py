@@ -182,6 +182,48 @@ class FinanceAPI(Client):
         return self._request_with_params(GET, FLEXIBLE_LOAN_INT_ACC, params)
 
 
+    # GET /api/v5/finance/sfp/dcd/currency-pair
+    def spf_dcd_currency_pair(self, baseCcy = '', quoteCcy = '', optType = '', uly = ''):
+        params = {'baseCcy':baseCcy, 'quoteCcy':quoteCcy,'optType':optType,'uly':uly}
+        return self._request_with_params(GET, SFP_DCD_CURRENCY_PAIR, params)
+    
+    # GET /api/v5/finance/sfp/dcd/products
+    def spf_dcd_products(self, baseCcy = '', quoteCcy = '', optType = ''):
+        params = {'baseCcy':baseCcy, 'quoteCcy':quoteCcy,'optType':optType}
+        return self._request_with_params(GET, SFP_DCD_PRODUCTS, params)
+    
+    # POST /api/v5/finance/sfp/dcd/quote
+    def spf_dcd_quote(self, productId = '', notionalSz = '', notionalCcy = ''):
+        params = {'productId':productId, 'notionalSz':notionalSz,'notionalCcy':notionalCcy}
+        return self._request_with_params(POST, SFP_DCD_QUOTE, params)
+    
+    # POST /api/v5/finance/sfp/dcd/trade
+    def spf_dcd_trade(self, quoteId = ''):
+        params = {'quoteId':quoteId}
+        return self._request_with_params(POST, SFP_DCD_TRADE, params)
+    
+    # POST /api/v5/finance/sfp/dcd/redeem-quote
+    def spf_dcd_redeem_quote(self, ordId = ''):
+        params = {'ordId':ordId}
+        return self._request_with_params(POST, SFP_DCD_REDEEM_QUOTE, params)
+    
+    # POST /api/v5/finance/sfp/dcd/redeem
+    def spf_dcd_redeem(self, ordId = '', quoteId = ''):
+        params = {'ordId':ordId, 'quoteId':quoteId}
+        return self._request_with_params(POST, SFP_DCD_REDEEM, params)
+    
+    # GET /api/v5/finance/sfp/dcd/order-status
+    def spf_dcd_order_status(self, ordId = ''):
+        params = {'ordId':ordId}
+        return self._request_with_params(GET, SFP_DCD_ORDER_STATUS, params)
+
+    # GET /api/v5/finance/sfp/dcd/order-history
+    def spf_dcd_order_history(self, ordId = '', productId = '', uly = '', state = '', beginId = '', endId = '', begin = '', end = '', limit = ''):
+        params = {'ordId':ordId, 'productId':productId,'uly':uly,'state':state,'beginId':beginId,'endId':endId,'begin':begin,'end':end,'limit':limit}
+        return self._request_with_params(GET, SFP_DCD_ORDER_HISTORY, params)
+
+
+
 
 
 

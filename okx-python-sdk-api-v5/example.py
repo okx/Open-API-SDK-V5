@@ -60,7 +60,7 @@ if __name__ == '__main__':
     # 获取交易产品最大可借  Get the maximum loan of instrument
     # result = accountAPI.get_max_load('BTC-USDT', 'cross', 'BTC')
     # 获取当前账户交易手续费费率  Get Fee Rates
-    # result = accountAPI.get_fee_rates(instType = 'SPOT',instId = '',instFamily = '',ruleType = '')
+    # result = accountAPI.get_fee_rates(instType = 'SPOT',instId = '',instFamily = '',ruleType = '',groupId='')
     # 获取计息记录  Get interest-accrued
     # result = accountAPI.get_interest_accrued('BTC-USDT', 'BTC', 'isolated', '', '', '10', '')
     # 获取用户当前市场借币利率 Get interest rate
@@ -183,6 +183,8 @@ if __name__ == '__main__':
     # result = accountAPI.precheck_set_delta_neutral(stgyType='')
     # 设置交易配置 POST /api/v5/account/set-trading-config
     # result = accountAPI.set_trading_config(type='', stgyType='')
+    #获取账单类型 /api/v5/account/subtypes
+    # result = accountAPI.get_account_subtypes(type = '')
 
     # funding api
     fundingAPI = Funding.FundingAPI(api_key, secret_key, passphrase, False, flag)
@@ -251,9 +253,9 @@ if __name__ == '__main__':
     # 获取闪兑币对信息  Get Currency-pair
     # result = convertAPI.get_currency_pair(fromCcy = 'USDT', toCcy = 'BTC')
     # 闪兑预估询价  Estimate-quote
-    # result = convertAPI.estimate_quote(baseCcy = 'OKB', quoteCcy = 'USDT', side = 'sell', rfqSz = '1', rfqSzCcy = 'USDT', clQReqId = '')
+    # result = convertAPI.estimate_quote(baseCcy = 'OKB', quoteCcy = 'USDT', side = 'sell', rfqSz = '1', rfqSzCcy = 'USDT', clQReqId = '',convertMode='')
     # 闪兑交易  Convert-trade
-    # result = convertAPI.convert_trade(quoteId='quoterOKB-USDT16480319751107680', baseCcy='OKB', quoteCcy='USDT',
+    # result = convertAPI.convert_trade(quoteId='quoterOKB-USDT16480319751107680', baseCcy='OKB', quoteCcy='USDT',convertMode='',
     #                                   side='sell', sz='1', szCcy='USDT', clTReqId='',tag='')
     # 获取闪兑交易历史  Get Convert-history
     # result = convertAPI.get_convert_history(after = '', before = '', limit = '')
@@ -396,7 +398,7 @@ if __name__ == '__main__':
     # 下单  Place Order
     # result = tradeAPI.place_order(instId='BTC-USDT-SWAP', tdMode='isolated', ccy='', clOrdId='', tag='',
     #                               side='buy', posSide='long', ordType='market', sz='0.1', px='86000',tradeQuoteCcy = '',
-    #                               pxUsd='', pxVol='', reduceOnly='', tgtCcy='', banAmend='', stpMode='',pxAmendType = '',
+    #                               pxUsd='', pxVol='', reduceOnly='', tgtCcy='', banAmend='', stpMode='',pxAmendType = '',isElpTakerAccess='',
     #                               # attachAlgoOrds = [{"tachAlgoClOrdId":"",
     #                               #                    "slTriggerPxType":"",
     #                               #                    "tpTriggerPx":"",
@@ -749,6 +751,25 @@ if __name__ == '__main__':
     # result = Finance.staking_defi_orders_active(productId = '', protocolType = 'defi', ccy = '', state = '')
     # 查看历史订单 View historical orders
     # result = Finance.staking_defi_orders_history(productId = '', protocolType = '', ccy = '', after = '', before = '', limit = '')
+
+    #双币赢
+    # GET / 获取货币对 /api/v5/finance/sfp/dcd/currency-pair
+    # result = Finance.spf_dcd_currency_pair(productId = '', notionalSz = '', notionalCcy = '')
+    # GET / 获取产品信息
+    # result = Finance.spf_dcd_products(baseCcy = '', quoteCcy = '', optType = '')
+    # POST / 获取报价
+    # result = Finance.spf_dcd_quote(productId = '', notionalSz = '', notionalCcy = '')
+    # POST / 下单
+    # result = Finance.spf_dcd_trade(quoteId = '')
+    # POST / 获取赎回报价
+    # result = Finance.spf_dcd_redeem_quote(ordId = '')
+    # POST / 赎回
+    # result = Finance.spf_dcd_redeem(ordId = '', quoteId = '')
+    # GET / 获取订单状态
+    # result = Finance.spf_dcd_order_status(ordId = '')
+    # GET / 获取历史订单
+    # result = Finance.spf_dcd_order_history(ordId = '', productId = '', uly = '', state = '', beginId = '', endId = '', begin = '', end = '', limit = '')
+
 
     # ETH质押
     # 申购/api/v5/finance/staking-defi/eth/purchase

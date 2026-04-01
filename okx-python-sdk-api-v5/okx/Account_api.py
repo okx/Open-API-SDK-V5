@@ -81,8 +81,8 @@ class AccountAPI(Client):
         return self._request_with_params(GET, MAX_LOAN, params)
 
     # Get Fee Rates
-    def get_fee_rates(self, instType = '', instId='', uly='', instFamily='',ruleType = ''):
-        params = {'instType': instType, 'instId': instId, 'uly': uly, 'instFamily':instFamily,'ruleType':ruleType}
+    def get_fee_rates(self, instType = '', instId='', uly='', instFamily='',ruleType = '',groupId=''):
+        params = {'instType': instType, 'instId': instId, 'uly': uly, 'instFamily':instFamily,'ruleType':ruleType,'groupId':groupId}
         return self._request_with_params(GET, FEE_RATES, params)
 
     # Get interest-accrued
@@ -377,3 +377,8 @@ class AccountAPI(Client):
     def set_trading_config(self,type = '', stgyType = ''):
         params = {'type	':type	, 'stgyType':stgyType}
         return self._request_with_params(POST, SET_TRADING_CONFIG, params)
+    
+     # GET /api/v5/account/subtypes
+    def get_account_subtypes(self, type = ''):
+        params = {'type':type}
+        return self._request_with_params(GET, GET_ACCOUNT_SUBTYPES, params)

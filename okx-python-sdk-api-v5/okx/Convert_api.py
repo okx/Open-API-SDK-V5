@@ -14,12 +14,12 @@ class ConvertAPI(Client):
         params = {"fromCcy": fromCcy, 'toCcy': toCcy}
         return self._request_with_params(GET, GET_CURRENCY_PAIR, params)
 
-    def estimate_quote(self, baseCcy = '', quoteCcy = '', side = '', rfqSz = '', rfqSzCcy = '', clQReqId = '',tag=''):
-        params = {'baseCcy': baseCcy, 'quoteCcy': quoteCcy, 'side':side, 'rfqSz':rfqSz, 'rfqSzCcy':rfqSzCcy, 'clQReqId':clQReqId,'tag':tag}
+    def estimate_quote(self, baseCcy = '', quoteCcy = '', side = '', rfqSz = '', rfqSzCcy = '', clQReqId = '',tag='',convertMode=''):
+        params = {'baseCcy': baseCcy, 'quoteCcy': quoteCcy, 'side':side, 'rfqSz':rfqSz, 'rfqSzCcy':rfqSzCcy, 'clQReqId':clQReqId,'tag':tag,'convertMode':convertMode}
         return self._request_with_params(POST, ESTIMATE_QUOTE, params)
 
-    def convert_trade(self, quoteId = '', baseCcy = '', quoteCcy = '', side = '', sz = '', szCcy = '', clTReqId = '',tag=''):
-        params = {'quoteId': quoteId, 'baseCcy': baseCcy, 'quoteCcy':quoteCcy, 'side':side, 'sz':sz, 'szCcy':szCcy, 'clTReqId':clTReqId,'tag':tag}
+    def convert_trade(self, quoteId = '', baseCcy = '', quoteCcy = '', side = '', sz = '', szCcy = '', clTReqId = '',tag='',convertMode=''):
+        params = {'quoteId': quoteId, 'baseCcy': baseCcy, 'quoteCcy':quoteCcy, 'side':side, 'sz':sz, 'szCcy':szCcy, 'clTReqId':clTReqId,'tag':tag,'convertMode':convertMode}
         return self._request_with_params(POST, CONVERT_TRADE, params)
 
     def get_convert_history(self, after = '', before = '', limit = '',tag=''):

@@ -12,13 +12,13 @@ class TradeAPI(Client):
                     reduceOnly='', tgtCcy='', banAmend='',tpTriggerPx = '', tpOrdPx = '',
                     slTriggerPx = '', slOrdPx = '', tpTriggerPxType = '', slTriggerPxType = '',stpId='',
                     pxUsd = '',pxVol = '',pxAmendType = '',tradeQuoteCcy = '',     
-                    stpMode='',attachAlgoClOrdId='',attachAlgoOrds=[]):
+                    stpMode='',attachAlgoClOrdId='',isElpTakerAccess='',attachAlgoOrds=[]):
         params = {'instId': instId, 'tdMode': tdMode, 'side': side, 'ordType': ordType, 'sz': sz, 'ccy': ccy,
                   'clOrdId': clOrdId, 'tag': tag, 'posSide': posSide, 'px': px, 'reduceOnly': reduceOnly,
                   'tgtCcy': tgtCcy, 'banAmend': banAmend,'tpTriggerPx':tpTriggerPx,'tpOrdPx':tpOrdPx,'slTriggerPx':slTriggerPx
                   ,'slOrdPx':slOrdPx,'tpTriggerPxType':tpTriggerPxType,'slTriggerPxType':slTriggerPxType,
                   'pxUsd':pxUsd,'pxVol':pxVol,'pxAmendType':pxAmendType,'tradeQuoteCcy':tradeQuoteCcy,
-                  'stpId':stpId,'stpMode':stpMode,'attachAlgoClOrdId':attachAlgoClOrdId,'attachAlgoOrds':attachAlgoOrds}
+                  'stpId':stpId,'stpMode':stpMode,'attachAlgoClOrdId':attachAlgoClOrdId,'isElpTakerAccess':isElpTakerAccess,'attachAlgoOrds':attachAlgoOrds}
         return self._request_with_params(POST, PLACR_ORDER, params)
 
     # Place Multiple Orders
