@@ -311,65 +311,72 @@ class FinanceApi extends Utils
         return $this->request('/api/v5/finance/flexible-loan/borrow-currencies', $params, 'GET');
     }
 
-    public function flexibleLoanCollateralAssets($ccy=''){
+    public function flexibleLoanCollateralAssets($ccy='',$ordId=''){
         $params = [
             'ccy' => $ccy,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/collateral-assets', $params, 'GET');
     }
 
-    public function flexibleLoanMaxLoan($borrowCcy,$supCollateral=''){
+    public function flexibleLoanMaxLoan($borrowCcy,$supCollateral='',$ordId=''){
         $params = [
             'borrowCcy' => $borrowCcy,
             'supCollateral' => $supCollateral,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/max-loan', $params, 'POST');
     }
 
-    public function flexibleLoanMaxCollateralRedeemAmount($borrowCcy){
+    public function flexibleLoanMaxCollateralRedeemAmount($borrowCcy,$ordId=''){
         $params = [
             'borrowCcy' => $borrowCcy,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/max-collateral-redeem-amount', $params, 'GET');
     }
 
-    public function flexibleLoanAdjustCollateral($type,$collateralCcy,$collateralAmt){
+    public function flexibleLoanAdjustCollateral($type,$collateralCcy,$collateralAmt,$ordId=''){
         $params = [
             'type' => $type,
             'collateralCcy' => $collateralCcy,
             'collateralAmt' => $collateralAmt,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/adjust-collateral', $params, 'POST');
     }
 
-    public function flexibleLoanLoanInfo(){
+    public function flexibleLoanLoanInfo($ordId=''){
         $params = [
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/loan-info', $params, 'GET');
     }
 
-    public function flexibleLoanLoanHistory($type='',$after='',$before='',$limit=''){
+    public function flexibleLoanLoanHistory($type='',$after='',$before='',$limit='',$ordId=''){
         $params = [
             'type' => $type,
             'after' => $after,
             'before' => $before,
             'limit' => $limit,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/loan-history', $params, 'GET');
     }
 
-    public function flexibleLoanInterestAccrued($ccy='',$after='',$before='',$limit=''){
+    public function flexibleLoanInterestAccrued($ccy='',$after='',$before='',$limit='',$ordId=''){
         $params = [
             'ccy' => $ccy,
             'after' => $after,
             'before' => $before,
             'limit' => $limit,
+            'ordId' => $ordId,
         ];
 
         return $this->request('/api/v5/finance/flexible-loan/interest-accrued', $params, 'GET');

@@ -365,4 +365,42 @@ class PublicDataAPI extends Utils
 
         return $this->request('/api/v5/public/market-data-history',$params, 'GET');
     }
+
+    public function series($seriesId='')
+    {
+        $params = [
+            'seriesId' => $seriesId,
+        ];
+
+        return $this->request('/api/v5/public/event-contract/series',$params, 'GET');
+    }
+
+    public function events($seriesId='',$eventId='',$state='',$limit='',$before='',$after='')
+    {
+        $params = [
+            'seriesId' => $seriesId,
+            'eventId' => $eventId,
+            'state' => $state,
+            'limit' => $limit,
+            'before' => $before,
+            'after' => $after,
+        ];
+
+        return $this->request('/api/v5/public/event-contract/events',$params, 'GET');
+    }
+
+    public function markets($seriesId='',$eventId='',$instId='',$state='',$limit='',$before='',$after='')
+    {
+        $params = [
+            'seriesId' => $seriesId,
+            'eventId' => $eventId,
+            'instId' => $instId,
+            'state' => $state,
+            'limit' => $limit,
+            'before' => $before,
+            'after' => $after,
+        ];
+
+        return $this->request('/api/v5/public/event-contract/markets',$params, 'GET');
+    }
 }

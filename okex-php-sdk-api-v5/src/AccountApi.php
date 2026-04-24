@@ -820,4 +820,13 @@ class AccountApi extends Utils
 
         return $this->request('/api/v5/account/precheck-set-delta-neutral', $params, 'POST');
     }
+
+    public function subtypes($type)
+    {
+        $params = [
+            'type' => $type,
+        ];
+
+        return $this->request('/api/v5/account/subtypes', $params, 'GET');
+    }
 }

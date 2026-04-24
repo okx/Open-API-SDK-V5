@@ -50,8 +50,10 @@ $coin = "XMR";
 //$res = $obj -> getBillsArchive('SPOT','','','','','','','','');
 // 申请账单流水（自 2021 年）
 //$res = $obj -> billsHistoryArchive();
-// 申请账单流水（自 2021 年）
+// 获取账单流水（自 2021 年）
 //$res = $obj -> getBillsHistoryArchive();
+// 获取账单类型
+//$res = $obj -> subtypes();
 // 查看账户配置 Get Account Configuration
 //$res = $obj -> getConfig();
 // 设置持仓模式 Set Position mode
@@ -242,6 +244,12 @@ $currency = "EOS";
 $obj = new PublicDataAPI(Config::$config);
 // 获取交易产品基础信息 Get Instruments
 // $res = $obj->getInstruments('SPOT','','ETH-USDT');
+// 获取系列
+// $res = $obj->series('SPOT','','ETH-USDT');
+// 获取事件
+// $res = $obj->events('SPOT','','ETH-USDT');
+// 获取市场
+// $res = $obj->events('SPOT','','ETH-USDT');
 // 获取预估交割/行权价格
 // $res = $obj->estimatedPrice();
 // 获取交割和行权记录 Get Delivery/Exercise History
@@ -414,6 +422,39 @@ $obj = new TradingbotApi(Config::$config);
 // $res = $obj -> rsiBackTesting();
 // 最大网格数量（公共）
 // $res = $obj -> ridQuantity();
+
+
+/**
+ * 马丁交易
+ */
+$obj = new TradingbotApi(Config::$config);
+// 马丁策略委托下单
+// $res = $obj -> create();
+// 现货DCA编辑参数
+// $res = $obj -> dcaAmendOrderAlgo();
+// 停止马丁策略委托订单
+// $res = $obj -> dcaStop();
+// 获取进行中马丁策略委托单列表
+// $res = $obj -> dcaOngoingList();
+// 获取历史马丁策略委托单列表
+// $res = $obj -> dcaHistoryList();
+//  获取马丁策略子订单列表
+// $res = $obj -> dcaOrders();
+//  手动加仓
+// $res = $obj -> dcaManualBuy();
+//  修改复投设置
+// $res = $obj -> dcaReinvestment();
+//  修改止盈参数
+// $res = $obj -> dcaTakeProfit();
+//  获取马丁策略委托持仓
+// $res = $obj -> dcaPositionDetails();
+//  获取马丁周期列表
+// $res = $obj -> dcaCycleList();
+//   增加保证金
+// $res = $obj -> dcaAdd();
+//   减少保证金
+// $res = $obj -> dcaAdd();
+
 
 
 /**

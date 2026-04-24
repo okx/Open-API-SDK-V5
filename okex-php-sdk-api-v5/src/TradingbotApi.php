@@ -545,5 +545,183 @@ class TradingbotApi extends Utils
         return $this->request('/api/v5/tradingBot/recurring/sub-orders', $params, 'GET');
     }
 
+    public function create($instId='',$algoOrdType='',$initOrdAmt='',$allowReinvest='',$safetyOrdAmt='',$maxSafetyOrds='',$pxSteps='',$pxStepsMult='',$volMult='',$tpPct='',$slPct='',$slMode='',$direction='',$lever='',$triggerParams='',$profitSharingRatio='',$trackingMode='',$tag='',$algoClOrdId='',$tradeQuoteCcy='')
+    {
+        $params = [
+            'instId' => $instId,
+            'algoOrdType' => $algoOrdType,
+            'initOrdAmt' => $initOrdAmt,
+            'allowReinvest' => $allowReinvest,
+            'safetyOrdAmt' => $safetyOrdAmt,
+            'maxSafetyOrds' => $maxSafetyOrds,
+            'pxSteps' => $pxSteps,
+            'pxStepsMult' => $pxStepsMult,
+            'volMult' => $volMult,
+            'tpPct' => $tpPct,
+            'slPct' => $slPct,
+            'slMode' => $slMode,
+            'direction' => $direction,
+            'lever' => $lever,
+            'triggerParams' => $triggerParams,
+            'profitSharingRatio' => $profitSharingRatio,
+            'trackingMode' => $trackingMode,
+            'tag' => $tag,
+            'algoClOrdId' => $algoClOrdId,
+            'tradeQuoteCcy' => $tradeQuoteCcy,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/create', $params, 'POST');
+    }
+
+    public function dcaAmendOrderAlgo($algoId='',$pxSteps='',$pxStepsMult='',$volMult='',$tpPct='',$slPct='',$initOrdAmt='',$safetyOrdAmt='',$maxSafetyOrds='',$reserveFunds='',$triggerParams='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'pxSteps' => $pxSteps,
+            'pxStepsMult' => $pxStepsMult,
+            'volMult' => $volMult,
+            'tpPct' => $tpPct,
+            'slPct' => $slPct,
+            'initOrdAmt' => $initOrdAmt,
+            'safetyOrdAmt' => $safetyOrdAmt,
+            'maxSafetyOrds' => $maxSafetyOrds,
+            'reserveFunds' => $reserveFunds,
+            'triggerParams' => $triggerParams,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/amend-order-algo', $params, 'POST');
+    }
+
+    public function dcaStop($algoId='',$algoOrdType='',$stopType='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+            'stopType' => $stopType,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/stop', $params, 'POST');
+    }
+
+    public function dcaOngoingList($algoOrdType='',$algoId='',$after='',$before='',$limit='')
+    {
+        $params = [
+            'algoOrdType' => $algoOrdType,
+            'algoId' => $algoId,
+            'after' => $after,
+            'before' => $before,
+            'limit' => $limit,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/ongoing-list', $params, 'GET');
+    }
+
+    public function dcaHistoryList($algoOrdType='',$algoId='',$after='',$before='',$limit='')
+    {
+        $params = [
+            'algoOrdType' => $algoOrdType,
+            'algoId' => $algoId,
+            'after' => $after,
+            'before' => $before,
+            'limit' => $limit,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/history-list', $params, 'GET');
+    }
+
+    public function dcaOrders($algoOrdType='',$algoId='',$cycleId='',$after='',$before='',$limit='')
+    {
+        $params = [
+            'algoOrdType' => $algoOrdType,
+            'algoId' => $algoId,
+            'cycleId' => $cycleId,
+            'after' => $after,
+            'before' => $before,
+            'limit' => $limit,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/orders', $params, 'GET');
+    }
+
+    public function dcaManualBuy($algoId='',$algoOrdType='',$price='',$amt='',$ordType='',$tradeQuoteCcy='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+            'price' => $price,
+            'amt' => $amt,
+            'ordType' => $ordType,
+            'tradeQuoteCcy' => $tradeQuoteCcy,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/orders/manual-buy', $params, 'POST');
+    }
+
+    public function dcaReinvestment($algoId='',$algoOrdType='',$allowReinvest='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+            'allowReinvest' => $allowReinvest,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/settings/reinvestment', $params, 'POST');
+    }
+
+    public function dcaTakeProfit($algoId='',$algoOrdType='',$tpPrice='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+            'tpPrice' => $tpPrice,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/settings/take-profit', $params, 'POST');
+    }
+
+    public function dcaPositionDetails($algoId='',$algoOrdType='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/position-details', $params, 'GET');
+    }
+
+    public function dcaCycleList($algoId='',$algoOrdType='',$instId='',$after='',$before='',$limit='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'algoOrdType' => $algoOrdType,
+            'instId' => $instId,
+            'after' => $after,
+            'before' => $before,
+            'limit' => $limit,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/cycle-list', $params, 'GET');
+    }
+
+    public function dcaAdd($algoId='',$amt='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'amt' => $amt,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/margin/add', $params, 'POST');
+    }
+
+    public function dcaReduce($algoId='',$amt='')
+    {
+        $params = [
+            'algoId' => $algoId,
+            'amt' => $amt,
+        ];
+
+        return $this->request('/api/v5/tradingBot/dca/margin/reduce', $params, 'POST');
+    }
+
 
 }
