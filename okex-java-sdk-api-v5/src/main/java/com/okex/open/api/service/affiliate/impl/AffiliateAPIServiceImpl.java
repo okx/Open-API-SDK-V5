@@ -31,4 +31,9 @@ public class AffiliateAPIServiceImpl implements AffiliateAPIService {
     public JSONObject getPartner(String apiKey) {
         return this.client.executeSync(this.api.getPartner(apiKey));
     }
+
+    @Override
+    public JSONObject getInviteeList(String begin, String end, String limit) {
+        return this.client.executeSync(this.api.getInviteeList(begin, end, limit));
+    }
 }
